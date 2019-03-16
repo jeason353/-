@@ -80,6 +80,7 @@ if __name__== "__main__":
 	tkinter.Label(tk, textvariable=label, font=("Arial", 10)).pack(side=tkinter.LEFT)
 	# text = tkinter.StringVar()
 	# text.set('test')
+	
 	scroll = tkinter.Scrollbar()
 	scroll.pack(side=tkinter.RIGHT, fill=tkinter.Y)
 	text = tkinter.Text(tk, font=("Arial", 10))
