@@ -55,7 +55,6 @@ int main(int argc, char **argv)
 
     while(true)
     {
-        // printf("count\n");
         // 定义客户端的socket地址结构client_addr，当收到来自客户端的请求后，调用accept
         // 接受此请求，同时将client端的地址和端口等信息写入client_addr中
         struct sockaddr_in client_addr;

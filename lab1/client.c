@@ -97,13 +97,12 @@ int main(int argc, char **argv)
                 }
                 bzero(buffer, BUFFER_SIZE);
                 length = recv(client_socket, buffer, BUFFER_SIZE, 0);
-                // printf("s: %d\n", length);
             }
             fwrite(buffer, sizeof(char), length, fp);
             fclose(fp);
             printf("Recieve File:\t %s From Server[%s] Successfully!\n", file_name, argv[1]);
         }else{
-            printf("server: no such file!");
+            printf("server: no such file!\n");
         }
         close(client_socket);
     }
