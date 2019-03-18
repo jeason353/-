@@ -50,7 +50,7 @@ int main(int argc, char **argv)
 
         // 服务器的IP地址来自程序的参数   
         if (inet_aton(argv[1], &server_addr.sin_addr) == 0)
-        {
+        {   
             printf("Server IP Address Error!\n");
             exit(1);
         }
