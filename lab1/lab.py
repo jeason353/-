@@ -5,7 +5,7 @@ import tkinter
 def scan(ip, port):
 	global output
 	s = socket.socket()
-	s.settimeout(0.1)   # 设置超时时间
+	s.settimeout(1)   # 设置超时时间
 	out = s.connect_ex((ip, port))
 	if out == 0:
 		output += str(port) + ' : OPEN \n'
@@ -80,7 +80,7 @@ if __name__== "__main__":
 	tkinter.Label(tk, textvariable=label, font=("Arial", 10)).pack(side=tkinter.LEFT)
 	# text = tkinter.StringVar()
 	# text.set('test')
-	
+
 	scroll = tkinter.Scrollbar()
 	scroll.pack(side=tkinter.RIGHT, fill=tkinter.Y)
 	text = tkinter.Text(tk, font=("Arial", 10))
