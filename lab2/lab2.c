@@ -14,7 +14,7 @@ struct ether_header
   unsigned char ether_shost[6]; //source mac
   unsigned short ether_type;    //type of ethernet
   unsigned short ip_type;       //type of ip protocol
-  unsigned char ip[11];         
+  unsigned char ip[10];         
   unsigned char source[4];
   unsigned char destination[4];
   unsigned short source_port;
