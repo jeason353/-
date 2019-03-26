@@ -34,7 +34,7 @@ void ethernet_protocol_callback(unsigned char *argument,const struct pcap_pkthdr
   ethernet_type = ntohs(ethernet_protocol->ether_type);
   if(ethernet_type == 0x0800){ // judge if is IP protocol or not
     printf("----------------------------------------------------\n");
-    printf("%s\n", ctime((time_t *)&(packet_heaher->ts.tv_sec))); 
+    printf("%s\n", ctime((time_t *)&(packet_heaher->ts.tv_sec)));
     mac_string = (unsigned char *)ethernet_protocol->ether_shost;
     printf("Mac Source Address:%02x:%02x:%02x:%02x:%02x:%02x\n",*(mac_string+0),*(mac_string+1),*(mac_string+2),*(mac_string+3),*(mac_string+4),*(mac_string+5));
     mac_string = (unsigned char *)ethernet_protocol->ether_dhost;
@@ -62,18 +62,18 @@ int main(int argc, char *argv[])
   pcap_t * pcap_handle;
   unsigned char *mac_string;        
   // unsigned short ethernet_type;    
-  char *net_interface = NULL;
+  char *device = NULL;
   
   printf("开始抓包\n");
 
-  net_interface = pcap_lookupdev(error_content);
-  if(NULL == net_interface)
+  device = pcap_lookupdev(error_content);
+  if(device == NULL)
   {
     perror("pcap_lookupdev");
     exit(-1);
   }
  
-  pcap_handle = pcap_open_live(net_interface,BUFSIZE,1,0,error_content);//打开网络接口
+  pcap_handle = pcap_open_live(device,BUFSIZE,1,0,error_content);//打开网络接口
     
   if(pcap_loop(pcap_handle,-1,ethernet_protocol_callback,NULL) < 0)
   {
