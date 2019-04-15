@@ -20,7 +20,7 @@ def encrypt(hash1: str, authen_code: str) -> str:
     return str(b2a_hex(text), encoding='utf-8')
 
 def run():
-    db = pymysql.connect('localhost', 'root', 'wk...1997', 'password')
+    db = pymysql.connect('localhost', 'root', 'wk123', 'password')
 
     cursor = db.cursor()
     sql = 'select * from K'
